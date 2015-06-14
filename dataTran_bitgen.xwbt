@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Xilinx\workplaceISE\experiment_3\dataTran.ncd
+OUTFILE=D:\Xilinx\workplaceISE\experiment_3\dataTran.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4cp132
+WORKINGDIR=D:\Xilinx\workplaceISE\experiment_3
+LICENSE=WebPack
+USER_INFO=211035060_0_0_376

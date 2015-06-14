@@ -1,0 +1,12 @@
+# Pin assignment for SWs
+NET "reset" LOC = "N3";  # Bank = 2, Signal name = SW7
+NET "set" LOC = "E2";  # Bank = 3, Signal name = SW6
+NET "INPUT" LOC = "P11";  # Bank = 2, Signal name = SW0
+
+
+NET "OUT" LOC = "P7" ; # Bank = 3, Signal name = LD2
+NET "D2" LOC = "M11" ; # Bank = 2, Signal name = LD1
+NET "Q1" LOC = "M5" ;  # Bank = 2, Signal name = LD0
+
+NET "CLK" LOC = "G12"; # Bank = 0, Signal name = BTN0
+ 

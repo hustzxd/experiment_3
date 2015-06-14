@@ -1,0 +1,320 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
+ 
+--> Reading design: dataTran.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "dataTran.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "dataTran"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : dataTran
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "D_flipflop.v" in library work
+Compiling verilog file "dataTran.v" in library work
+Module <D_flipflop> compiled
+Module <dataTran> compiled
+No errors in compilation
+Analysis of file <"dataTran.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <dataTran> in library <work>.
+
+Analyzing hierarchy for module <D_flipflop> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <dataTran>.
+WARNING:Xst:916 - "dataTran.v" line 29: Delay is ignored for synthesis.
+Module <dataTran> is correct for synthesis.
+ 
+Analyzing module <D_flipflop> in library <work>.
+WARNING:Xst:863 - "D_flipflop.v" line 25: Name conflict (<q> and <Q>, renaming q as q_rnm0).
+WARNING:Xst:916 - "D_flipflop.v" line 36: Delay is ignored for synthesis.
+Module <D_flipflop> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <D_flipflop>.
+    Related source file is "D_flipflop.v".
+Unit <D_flipflop> synthesized.
+
+
+Synthesizing Unit <dataTran>.
+    Related source file is "dataTran.v".
+WARNING:Xst:646 - Signal <Q2bar> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <Q1bar> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <dataTran> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2170 - Unit dataTran : the following signal(s) form a combinatorial loop: uut1/f3_and0000, uut1/f1_and0000, D2.
+WARNING:Xst:2170 - Unit dataTran : the following signal(s) form a combinatorial loop: uut2/q_rnm0_and0000, uut2/f3_and0000, OUT, uut2/f1_and0000.
+WARNING:Xst:2170 - Unit dataTran : the following signal(s) form a combinatorial loop: uut2/q_rnm0_and0000.
+WARNING:Xst:2170 - Unit dataTran : the following signal(s) form a combinatorial loop: D2.
+
+Optimizing unit <dataTran> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block dataTran, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : dataTran.ngr
+Top Level Output File Name         : dataTran
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 7
+
+Cell Usage :
+# BELS                             : 16
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 1
+#      LUT3                        : 2
+#      LUT4                        : 6
+#      MUXF5                       : 4
+# IO Buffers                       : 7
+#      IBUF                        : 4
+#      OBUF                        : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                        6  out of    960     0%  
+ Number of 4 input LUTs:                 11  out of   1920     0%  
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of     83     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 17.515ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 106 / 3
+-------------------------------------------------------------------------
+Delay:               17.515ns (Levels of Logic = 14)
+  Source:            set (PAD)
+  Destination:       OUT (PAD)
+
+  Data Path: set to OUT
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.218   0.808  set_IBUF (set_IBUF)
+     LUT3:I0->O            1   0.704   0.455  uut1/f2_and0000_SW0 (N14)
+     LUT4:I2->O            3   0.704   0.531  uut1/f2_and0000 (uut1/f2_and0000)
+     MUXF5:S->O            3   0.739   0.535  uut1/f1_and0000_f5 (uut1/f1_and0000)
+     LUT4:I3->O            1   0.704   0.000  uut1/q_rnm0_and00001 (uut1/q_rnm0_and0000)
+     MUXF5:I0->O           5   0.321   0.712  uut1/q_rnm0_and0000_f5 (D2_OBUF)
+     LUT4:I1->O            1   0.704   0.000  uut2/f1_and00001 (uut2/f1_and00001)
+     MUXF5:I0->O           3   0.321   0.566  uut2/f1_and0000_f5 (uut2/f1_and0000)
+     LUT3:I2->O            1   0.704   0.455  uut2/f2_and0000_SW0 (N12)
+     LUT4:I2->O            4   0.704   0.762  uut2/f2_and0000 (uut2/f2_and0000)
+     LUT2:I0->O            1   0.704   0.000  uut2/q_rnm0_and00001 (uut2/q_rnm0_and00001)
+     MUXF5:I1->O           2   0.321   0.447  uut2/q_rnm0_and0000_f5 (uut2/q_rnm0_and0000)
+     INV:I->O              1   0.704   0.420  uut2/q_rnm01_INV_0 (OUT_OBUF)
+     OBUF:I->O                 3.272          OUT_OBUF (OUT)
+    ----------------------------------------
+    Total                     17.515ns (11.824ns logic, 5.691ns route)
+                                       (67.5% logic, 32.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.75 secs
+ 
+--> 
+
+Total memory usage is 191244 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
